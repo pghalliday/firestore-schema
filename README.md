@@ -1,5 +1,8 @@
 # firestore-schema
 
+[![Build Status](https://travis-ci.org/pghalliday/firestore-schema.svg?branch=master)](https://travis-ci.org/pghalliday/firestore-schema)
+[![Coverage Status](https://coveralls.io/repos/github/pghalliday/firestore-schema/badge.svg?branch=master)](https://coveralls.io/github/pghalliday/firestore-schema?branch=master)
+
 Manage Google Cloud Firestore models, rules, indices and migrations.
 
 `firestore-schema` is a command line tool that will generate
