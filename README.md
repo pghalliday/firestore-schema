@@ -17,7 +17,7 @@ from a schema defined using a Javascript DSL
 ## Installation
 
 ```
-npm install --save-dev firestore-schema
+npm install --save-dev @pghalliday/firestore-schema
 ```
 
 ## Usage
