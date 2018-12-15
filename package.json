@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Manage Google Cloud Firestore models, rules, indices and migrations",
   "main": "index.js",
+  "bin": "bin/index.js",
   "scripts": {
     "cmd:lint": "eslint src",
     "cmd:unittest": "cross-env NODE_ENV=test nyc mocha test/src",
