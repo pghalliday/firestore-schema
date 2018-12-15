@@ -1,0 +1,27 @@
+{
+  "name": "firestore-schema",
+  "version": "1.0.0",
+  "description": "Manage Google Cloud Firestore models, rules, indices and migrations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pghalliday/firestore-schema.git"
+  },
+  "keywords": [
+    "firestore",
+    "schema",
+    "rules",
+    "models",
+    "indices",
+    "migrations"
+  ],
+  "author": "Peter Halliday <pghalliday@gmail.com> (https://pghalliday.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pghalliday/firestore-schema/issues"
+  },
+  "homepage": "https://github.com/pghalliday/firestore-schema#readme"
+}
