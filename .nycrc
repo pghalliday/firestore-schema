@@ -1,0 +1,28 @@
+{
+  "require": [
+    "@babel/register"
+  ],
+  "all": true,
+  "include": [
+    "src/**/*.js"
+  ],
+  "exclude": [
+    "src/cli.js"
+  ],
+  "sourceMap": false,
+  "instrument": false,
+  "lines": 100,
+  "statements": 100,
+  "functions": 100,
+  "branches": 100,
+  "watermarks": {
+    "lines": [100, 100],
+    "statements": [100, 100],
+    "functions": [100, 100],
+    "branches": [100, 100]
+  },
+  "reporter": [
+    "lcov"
+  ],
+  "report-dir": "coverage"
+}
