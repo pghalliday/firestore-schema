@@ -3,8 +3,9 @@ import packageJson from '../package.json';
 import FirestoreSchema from '.';
 
 function error(message) {
-  console.error('ERROR: ' + message + '\n');
-  program.help();
+  console.error(`ERROR: ${message}\n`);
+  program.outputHelp();
+  process.exit(1);
 }
 
 let entryPoint;
