@@ -30,7 +30,7 @@
     "test": "npm run --silent cmd:coverage",
     "prebuild": "npm --silent test",
     "build": "npm run --silent cmd:build",
-    "predeploy": "npm run --silent build",
+    "prepublish": "npm run --silent build",
     "alarmist:lint": "chokidar \"+(src|test)/**/*\" -c \"alarmist-npm cmd:lint\"",
     "alarmist:unittest": "chokidar \"+(src|test)/**/*\" -c \"alarmist-npm cmd:unittest\"",
     "alarmist:coverage": "chokidar \"coverage/lcov.info\" -c \"alarmist-npm cmd:coverage\"",
