@@ -19,10 +19,23 @@
     "report-dir": "coverage"
   },
   "scripts": {
-    "build": "babel src --out-dir lib --presets=@babel/env",
-    "test": "cross-env NODE_ENV=test nyc mocha test/src",
-    "lint": "eslint src",
-    "coverage": "nyc report --reporter text && nyc check-coverage"
+    "cmd:lint": "eslint src",
+    "cmd:unittest": "cross-env NODE_ENV=test nyc mocha test/src",
+    "cmd:coverage": "nyc report --reporter text && nyc check-coverage",
+    "cmd:build": "babel src --out-dir lib --presets=@babel/env",
+    "lint": "npm run --silent cmd:lint",
+    "preunittest": "npm run --silent lint",
+    "unittest": "npm run --silent cmd:unittest",
+    "pretest": "npm run --silent unittest",
+    "test": "npm run --silent cmd:coverage",
+    "prebuild": "npm --silent test",
+    "build": "npm run --silent cmd:build",
+    "predeploy": "npm run --silent build",
+    "alarmist:lint": "chokidar \"+(src|test)/**/*\" -c \"alarmist-npm cmd:lint\"",
+    "alarmist:unittest": "chokidar \"+(src|test)/**/*\" -c \"alarmist-npm cmd:unittest\"",
+    "alarmist:coverage": "chokidar \"coverage/lcov.info\" -c \"alarmist-npm cmd:coverage\"",
+    "alarmist:build": "chokidar \"src/**/*\" -c \"alarmist-npm cmd:build\"",
+    "start": "alarmist-monitor run-p alarmist:lint alarmist:unittest alarmist:coverage alarmist:build"
   },
   "repository": {
     "type": "git",
@@ -47,12 +60,16 @@
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.0",
     "@babel/register": "^7.0.0",
+    "alarmist": "^1.0.26",
+    "alarmist-npm": "^1.0.6",
     "babel-plugin-istanbul": "^5.1.0",
     "chai": "^4.2.0",
+    "chokidar-cli": "^1.2.1",
     "cross-env": "^5.2.0",
     "eslint": "^5.10.0",
     "eslint-config-google": "^0.11.0",
     "mocha": "^5.2.0",
+    "npm-run-all": "^4.1.5",
     "nyc": "^13.1.0"
   },
   "dependencies": {

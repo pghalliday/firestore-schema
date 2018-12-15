@@ -4,6 +4,5 @@ export default class FirestoreSchema {
   }
 
   generate() {
-    console.log(this.entryPoint);
   }
 }
