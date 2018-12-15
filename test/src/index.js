@@ -1,14 +1,13 @@
-import FirestoreSchema from '../../src';
+import Schema from '../../src';
 import chai from 'chai';
 
 chai.should();
 
-describe('FirestoreSchema', () => {
+describe('Schema', () => {
   it('should pass', () => {
-    const schema = new FirestoreSchema({
+    const schema = new Schema({
       entryPoint: 'hello',
     });
-    schema.should.be.ok;
-    schema.generate();
+    schema.generate().should.eql('hello');
   });
 });
