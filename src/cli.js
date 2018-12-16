@@ -4,11 +4,10 @@ import inquirer from 'inquirer';
 import packageJson from '../package.json';
 import Schema from '.';
 import Init from './init';
-import {
-  DEFAULT_CONFIG_PATH,
-  DEFAULT_SCHEMA_PATH,
-  DEFAULT_MIGRATIONS_PATH,
-} from './constants';
+
+export const DEFAULT_CONFIG_PATH = 'firestore-schema.json';
+export const DEFAULT_SCHEMA_PATH = 'firestore-schema/schema';
+export const DEFAULT_MIGRATIONS_PATH = 'firestore-schema/migrations';
 
 const CONFIG_OPTION = {
   alias: 'config',
@@ -63,4 +62,5 @@ yargs
           schema.generate();
         },
     )
+    .completion()
     .argv;

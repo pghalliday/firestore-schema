@@ -4,6 +4,6 @@ export default class Init {
   }
 
   create() {
-    console.log(this.params);
+    return this.params;
   }
 }
