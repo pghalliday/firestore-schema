@@ -1,9 +1,9 @@
 export default class Schema {
   constructor(params) {
-    this.entryPoint = params.entryPoint;
+    this.params = params;
   }
 
   generate() {
-    return this.entryPoint;
+    return this.params;
   }
 }

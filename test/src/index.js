@@ -1,13 +1,10 @@
 import Schema from '../../src';
-import chai from 'chai';
 
-chai.should();
+const CONFIG = {};
 
 describe('Schema', () => {
   it('should pass', () => {
-    const schema = new Schema({
-      entryPoint: 'hello',
-    });
-    schema.generate().should.eql('hello');
+    const schema = new Schema(CONFIG);
+    schema.generate().should.eql(CONFIG);
   });
 });

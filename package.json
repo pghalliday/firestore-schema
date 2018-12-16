@@ -5,8 +5,8 @@
   "main": "index.js",
   "bin": "bin/index.js",
   "scripts": {
-    "cmd:lint": "eslint src",
-    "cmd:unittest": "cross-env NODE_ENV=test nyc mocha test/src",
+    "cmd:lint": "eslint .",
+    "cmd:unittest": "cross-env NODE_ENV=test nyc mocha",
     "cmd:coverage": "nyc report --reporter text && nyc check-coverage",
     "cmd:build": "rimraf lib && babel src --out-dir lib",
     "cmd:coveralls": "cat ./coverage/lcov.info | coveralls",

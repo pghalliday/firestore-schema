@@ -1,0 +1,3 @@
+test/src
+--recursive
+--require test/helpers/common
