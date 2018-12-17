@@ -8,14 +8,6 @@ export const DEFAULT_CONFIG_PATH = 'firestore-schema.json';
 export const DEFAULT_SCHEMA_PATH = 'firestore-schema/schema';
 export const DEFAULT_MIGRATIONS_PATH = 'firestore-schema/migrations';
 
-const CONFIG_OPTION = {
-  alias: 'config',
-  demandOption: false,
-  default: DEFAULT_CONFIG_PATH,
-  describe: 'Path to the config file',
-  type: 'string',
-};
-
 yargs
     .version('v', packageJson.version)
     .alias('v', 'version')
@@ -53,7 +45,13 @@ yargs
         'Generate Google Cloud Firestore rules, indices, models and migrations',
         (yargs) => {
           yargs
-              .option('c', CONFIG_OPTION);
+              .option('c', {
+                alias: 'config',
+                demandOption: false,
+                default: DEFAULT_CONFIG_PATH,
+                describe: 'Path to the config file',
+                type: 'string',
+              });
         },
         (argv) => {
           const config = require(path.resolve(argv.config));
