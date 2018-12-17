@@ -1,4 +1,4 @@
-import Init from '../../src/init';
+import {Init} from '../../src/init';
 
 const PARAMS = {};
 

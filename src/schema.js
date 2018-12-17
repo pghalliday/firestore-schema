@@ -1,9 +1,9 @@
-export class Init {
+export class Schema {
   constructor(params) {
     this.params = params;
   }
 
-  create() {
+  generate() {
     return this.params;
   }
 }

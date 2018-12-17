@@ -2,8 +2,7 @@ import path from 'path';
 import yargs from 'yargs';
 import inquirer from 'inquirer';
 import packageJson from '../package.json';
-import Schema from '.';
-import Init from './init';
+import {Schema, Init} from '.';
 
 export const DEFAULT_CONFIG_PATH = 'firestore-schema.json';
 export const DEFAULT_SCHEMA_PATH = 'firestore-schema/schema';
