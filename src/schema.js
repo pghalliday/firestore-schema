@@ -1,9 +1,14 @@
+import {requires, entry} from './utils';
+
 export class Schema {
   constructor(params) {
-    this.params = params;
+    requires(params.require);
+    this.entry = entry(params.entry);
   }
 
   generate() {
-    return this.params;
+    const documents = {};
+    this.entry(documents);
+    return documents;
   }
 }
